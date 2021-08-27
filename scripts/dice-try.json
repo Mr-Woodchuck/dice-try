@@ -29,11 +29,11 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
       ],
   	system:"Taco"
     });
+		let diceTrySettings = game.user.getFlag("dice-try", "settings");
+		let twentyText = diceTrySettings.imageFor20;
+		let oneText = diceTrySettings.imageFor1;
 
-		let twentyText = game.settings.get("dice-try", "imageFor20");
-		let oneText = game.settings.get("dice-try", "imageFor1");
-
-	dice3d.addSystem({id:"UserDefined",name:"User Defined"},false);
+	dice3d.addSystem({id:"dice-try",name:"Dice Try"},false);
 
 	dice3d.addDicePreset({
 		type:"d20",
@@ -41,12 +41,14 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			oneText,'2','3','4','5',
 			'6','7','8','9','10','11','12','13','14','15','16','17','18','19', twentyText
 		],
-	system:"UserDefined"
+	system:"dice-try"
 	});
 
-	let minusText = game.settings.get("dice-try", "imageForDfMinus");
-	let blankText = game.settings.get("dice-try", "imageForDfBlank");
-	let plusText = game.settings.get("dice-try", "imageForDfPlus");
+	let minusText = diceTrySettings.imageForDfMinus;
+	let blankText = diceTrySettings.imageForDfBlank;
+	let plusText = diceTrySettings.imageForDfPlus;
+
+	console.log(minusText, blankText, plusText);
 
 	dice3d.addDicePreset({
 		type:"df",
