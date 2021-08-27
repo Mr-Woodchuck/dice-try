@@ -1,0 +1,61 @@
+Hooks.on('diceSoNiceReady', (dice3d) => {
+
+	dice3d.addTexture("Chipotle1", {
+	    name: "Chipoltle",
+	    composite: "hard-light",
+	    source: "modules/nice-more-dice/textures/hex.webp"
+	});
+
+	dice3d.addSystem({id:"Chipoltle",name:"Chipolte"},false);
+
+   dice3d.addDicePreset({
+     type:"df",
+     labels:[
+       'modules/nice-more-dice/faces/hex/dfm.webp',
+       'modules/dice-try/faces/Chipolte.webp',
+       'modules/nice-more-dice/faces/hex/dfp.webp'
+     ],
+ 	system:"Chipoltle"
+   });
+
+	 dice3d.addSystem({id:"Taco",name:"Taco Hell"},false);
+
+    dice3d.addDicePreset({
+      type:"df",
+      labels:[
+        'modules/dice-try/faces/TacoHell.webp',
+        '',
+        '+'
+      ],
+  	system:"Taco"
+    });
+
+		let twentyText = game.settings.get("dice-try", "imageFor20");
+		let oneText = game.settings.get("dice-try", "imageFor1");
+
+	dice3d.addSystem({id:"UserDefined",name:"User Defined"},false);
+
+	dice3d.addDicePreset({
+		type:"d20",
+		labels:[
+			oneText,'2','3','4','5',
+			'6','7','8','9','10','11','12','13','14','15','16','17','18','19', twentyText
+		],
+	system:"UserDefined"
+	});
+
+	let minusText = game.settings.get("dice-try", "imageForDfMinus");
+	let blankText = game.settings.get("dice-try", "imageForDfBlank");
+	let plusText = game.settings.get("dice-try", "imageForDfPlus");
+
+	dice3d.addDicePreset({
+		type:"df",
+		labels:[
+			minusText,
+			blankText,
+			plusText
+		],
+	system:"UserDefined"
+	});
+
+});

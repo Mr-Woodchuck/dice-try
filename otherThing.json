@@ -1,0 +1,18 @@
+{
+	"name": "dice-try",
+	"title": "Dice Try",
+	"description": "Adds some random things to try to see if I can figure out how to do my own dice",
+	"author": "Mr. Woodchuck",
+	"version": "1.0.1",
+	"minimumCoreVersion": "0.7.0",
+	"compatibleCoreVersion": "0.8.9",
+	"dependencies": [
+		{
+			"type": "module",
+			"name": "dice-so-nice"
+		}
+	],
+	"scripts": [
+		"scripts/dice-try.json"
+	]
+}
