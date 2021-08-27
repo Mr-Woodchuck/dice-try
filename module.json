@@ -3,7 +3,7 @@
 	"title": "Dice Try",
 	"description": "Adds some random things to try to see if I can figure out how to do my own dice.",
 	"author": "Mr. Woodchuck",
-	"version": "1.0.3",
+	"version": "0.0.3",
 	"minimumCoreVersion": "0.7.0",
 	"compatibleCoreVersion": "0.8.8",
 	"dependencies": [{
@@ -15,5 +15,9 @@
 ],
 	"scripts": [
 		"scripts/dice-try.json"
-	]
+	],
+	"url": "https://github.com/Mr-Woodchuck/dice-try",
+	"manifest": "https://raw.githubusercontent.com/Mr-Woodchuck/dice-try/master/module.json",
+	"download": "need to figure this out"
+
 }
