@@ -21,7 +21,7 @@ Hooks.once('init', () => {
       scope: "world",
       config: false,
       type: Object,
-      default: AddDice.CONFIG
+      default: AddDice.DEFAULT_OPTIONS
     })
 
 });
