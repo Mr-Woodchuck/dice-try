@@ -1,9 +1,9 @@
 {
 	"name": "dice-try",
 	"title": "Dice Try",
-	"description": "Adds some random things to try to see if I can figure out how to do my own dice.",
+	"description": "Adjust dice so nice min and max die faces.",
 	"author": "Mr. Woodchuck",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"minimumCoreVersion": "0.7.0",
 	"compatibleCoreVersion": "0.8.9",
 	"dependencies": [{
@@ -13,6 +13,11 @@
   "esmodules": [
   "./scripts/main.js"
 ],
+"languages": [{
+	"lang": "en",
+	"name": "English",
+	"path": "./lang/en.json"
+}],
 	"scripts": [
 		"scripts/dice-try.json"
 	],

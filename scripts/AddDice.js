@@ -2,23 +2,32 @@ export class AddDice extends FormApplication {
 
    static get DEFAULT_OPTIONS() {
        return {
-        //  minusText: game.settings.get("dice-try", "imageForDfMinus"),
-       	// blankText: game.settings.get("dice-try", "imageForDfBlank"),
-       	// plusText: game.settings.get("dice-try", "imageForDfPlus"),
-        // imageFor1: game.settings.get("dice-try", "imageFor1"),
-        // imageFor20: game.settings.get("dice-try", "imageFor20")
         imageForDfMinus: '-',
-        imageForDfBlank: '',
         imageForDfPlus: '+',
-        imageFor1: '1',
-        imageFor20: '20'
+        imageForDcH: "👤",
+        imageForDcT: "🪱", // worm looks like a tail?
+        imageForD21: "1",
+        imageForD22: "1",
+        imageForD41: "1",
+        imageForD44: "4",
+        imageForD61: "1",
+        imageForD66: "6",
+        imageForD81: "🛑",
+        imageForD88: "🐙",
+        imageForD1001: "1",
+        imageForD1000: "0",
+        imageForD10010: "10",
+        imageForD10000: "00",
+        imageForD1201: "1",
+        imageForD1212: "12",
+        imageForD2001: "1",
+        imageForD2020: "🐉"
        };
    }
 
-   static CONFIG(user = game.user) {
-       let userSettings = user.getFlag("dice-try", "settings") ? duplicate(user.getFlag("dice-try", "settings")) : null;
-       let config = mergeObject(AddDice.DEFAULT_OPTIONS, userSettings);
-       // mergeObject(config);
+   static CONFIG() {
+       let settings = game.settings.get("dice-try", "dice-config") ? duplicate(game.settings.get("dice-try", "dice-config")) : null;
+       let config = mergeObject(AddDice.DEFAULT_OPTIONS, settings);
        return config;
    }
 
@@ -44,21 +53,7 @@ export class AddDice extends FormApplication {
 
      let settings = mergeObject(AddDice.CONFIG(), formData, { insertKeys: false, insertValues: false });
 
-     await game.user.setFlag('dice-try', 'settings', settings);
-
-     	let minusText = formData.imageForDfMinus;
-     	let blankText = formData.imageForDfBlank;
-     	let plusText = formData.imageForDfPlus;
-
-     	// game.dice3d.addDicePreset({
-     	// 	type:"df",
-     	// 	labels:[
-     	// 		minusText,
-     	// 		blankText,
-     	// 		plusText
-     	// 	],
-     	// system:"UserDefined"
-     	// });
+     await game.settings.set('dice-try', 'dice-config', settings);
 
       debouncedReload();
    }

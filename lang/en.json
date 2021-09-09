@@ -1,5 +1,12 @@
 {
-    "DICETRY.config": "Dice Try Settings",
-    "DICETRY.configTitle": "My Dice Try Settings",
-    "DICETRY.configHint": "Can I add default dice settings here?"
+  "DICETRY.config": "Dice Try Settings",
+  "DICETRY.configTitle": "Dice Try Settings",
+  "DICETRY.configHint": "Set dice sides here.",
+  "DICETRY.set": "Set",
+  "DICETRY.fateDie": "Fate Die",
+  "DICETRY.fateDieMinus": "Fate Die Minus",
+  "DICETRY.fateDiePlus": "Fate Die Plus",
+  "DICETRY.coin": "Coin",
+  "DICETRY.heads": "Heads",
+  "DICETRY.tails": "Tails"
 }

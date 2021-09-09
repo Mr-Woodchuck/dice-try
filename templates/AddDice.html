@@ -1,26 +1,219 @@
 <form autocomplete="off" class="dice-try flexcol">
-  <label>Set Fate Dice</label>
+  <label>{{localize 'DICETRY.set'}} {{localize 'DICETRY.fateDie'}}</label>
   <div class="form-group">
-    <label>Fate die Minus</label>
-    <input type="text" name="imageForDfMinus" value="{{imageForDfMinus}}">
+    <label>{{localize 'DICETRY.fateDieMinus'}}</label>
+    <div class="form-fields">
+      <button type="button" class="file-picker" data-type="image" data-target="imageForDfMinus" title="Browse Files" tabindex="-1">
+        <i class="fas fa-file-import fa-fw"></i>
+      </button>
+      <input class="image" type="text" name="imageForDfMinus" placeholder="path/img.jpg" value="{{imageForDfMinus}}">
+    </div>
   </div>
   <div class="form-group">
-    <label>Fate die Blank</label>
-    <input type="text" name="imageForDfBlank" value="{{imageForDfBlank}}">
+    <label>{{localize 'DICETRY.fateDiePlus'}}</label>
+    <div class="form-fields">
+      <button type="button" class="file-picker" data-type="image" data-target="imageForDfPlus" title="Browse Files" tabindex="-1">
+        <i class="fas fa-file-import fa-fw"></i>
+      </button>
+      <input class="image" type="text" name="imageForDfPlus" placeholder="path/img.jpg" value="{{imageForDfPlus}}">
+    </div>
   </div>
-  <div class="form-group">
-    <label>Fate die Plus</label>
-    <input type="text" name="imageForDfPlus" value="{{imageForDfPlus}}">
+  <div>
+    <label>{{localize 'DICETRY.coin'}}</label>
+    <div class="form-group">
+      <label>{{localize 'DICETRY.heads'}}</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForDcH" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForDcH" placeholder="path/img.jpg" value="{{imageForDcH}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>{{localize 'DICETRY.tails'}}</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForDcT" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForDcT" placeholder="path/img.jpg" value="{{imageForDcT}}">
+      </div>
+    </div>
   </div>
-    <label>Set D20</label>
-  <div class="form-group">
-    <label>D20 1</label>
-    <input type="text" name="imageFor1" value="{{imageFor1}}">
+  <div>
+    <label>{{localize 'DICETRY.set'}} D2</label>
+    <div class="form-group">
+      <label>D2 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD21" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD21" placeholder="path/img.jpg" value="{{imageForD21}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D2 2</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD22" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD22" placeholder="path/img.jpg" value="{{imageForD22}}">
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label>D20 20</label>
-    <input type="text" name="imageFor20" value="{{imageFor20}}">
-</div>
+  <div>
+    <label>{{localize 'DICETRY.set'}} D4</label>
+    <div class="form-group">
+      <label>D4 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD41" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD41" placeholder="path/img.jpg" value="{{imageForD41}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D4 4</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD44" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD44" placeholder="path/img.jpg" value="{{imageForD44}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D6</label>
+    <div class="form-group">
+      <label>D6 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD61" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD61" placeholder="path/img.jpg" value="{{imageForD61}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D6 6</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD66" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD66" placeholder="path/img.jpg" value="{{imageForD66}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D8</label>
+    <div class="form-group">
+      <label>D8 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD81" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD81" placeholder="path/img.jpg" value="{{imageForD81}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D8 8</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD88" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD88" placeholder="path/img.jpg" value="{{imageForD88}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D10</label>
+    <div class="form-group">
+      <label>D10 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD1001" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD1001" placeholder="path/img.jpg" value="{{imageForD1001}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D10 0</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD1000" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD1000" placeholder="path/img.jpg" value="{{imageForD1000}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D100</label>
+    <div class="form-group">
+      <label>D100 10</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD10010" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD10010" placeholder="path/img.jpg" value="{{imageForD10010}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D100 00</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD10000" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD10000" placeholder="path/img.jpg" value="{{imageForD10000}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D12</label>
+    <div class="form-group">
+      <label>D12 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD1201" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD1201" placeholder="path/img.jpg" value="{{imageForD1201}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D12 12</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD1212" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD1212" placeholder="path/img.jpg" value="{{imageForD1212}}">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>{{localize 'DICETRY.set'}} D20</label>
+    <div class="form-group">
+      <label>D20 1</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD2001" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD2001" placeholder="path/img.jpg" value="{{imageForD2001}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>D20 20</label>
+      <div class="form-fields">
+        <button type="button" class="file-picker" data-type="image" data-target="imageForD2020" title="Browse Files" tabindex="-1">
+          <i class="fas fa-file-import fa-fw"></i>
+        </button>
+        <input class="image" type="text" name="imageForD2020" placeholder="path/img.jpg" value="{{imageForD2020}}">
+      </div>
+    </div>
+  </div>
+
   <button type="submit" name="submit">
       <i class="far fa-save"></i> Save
   </button>

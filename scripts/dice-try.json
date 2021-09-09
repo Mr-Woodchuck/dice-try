@@ -1,39 +1,20 @@
 Hooks.on('diceSoNiceReady', (dice3d) => {
 
-	dice3d.addTexture("Chipotle1", {
-	    name: "Chipoltle",
-	    composite: "hard-light",
-	    source: "modules/nice-more-dice/textures/hex.webp"
-	});
 
-	dice3d.addSystem({id:"Chipoltle",name:"Chipolte"},false);
+	let systemName = "dice-try";
+	let displayName = "Dice Try";
+	dice3d.addSystem({id:systemName,name:displayName},false);
 
-   dice3d.addDicePreset({
-     type:"df",
-     labels:[
-       'modules/nice-more-dice/faces/hex/dfm.webp',
-       'modules/dice-try/faces/Chipolte.webp',
-       'modules/nice-more-dice/faces/hex/dfp.webp'
-     ],
- 	system:"Chipoltle"
-   });
+	let diceTrySettings = game.settings.get("dice-try", "dice-config");
 
-	 dice3d.addSystem({id:"Taco",name:"Taco Hell"},false);
+	console.log(diceTrySettings);
 
-    dice3d.addDicePreset({
-      type:"df",
-      labels:[
-        'modules/dice-try/faces/TacoHell.webp',
-        '',
-        '+'
-      ],
-  	system:"Taco"
-    });
-		let diceTrySettings = game.user.getFlag("dice-try", "settings");
-		let twentyText = diceTrySettings.imageFor20;
-		let oneText = diceTrySettings.imageFor1;
+	if (diceTrySettings === "") {
+		return
+	}
 
-	dice3d.addSystem({id:"dice-try",name:"Dice Try"},false);
+	let twentyText = diceTrySettings.imageFor20;
+	let oneText = diceTrySettings.imageFor1;
 
 	dice3d.addDicePreset({
 		type:"d20",
@@ -41,23 +22,138 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			oneText,'2','3','4','5',
 			'6','7','8','9','10','11','12','13','14','15','16','17','18','19', twentyText
 		],
-	system:"dice-try"
+	system:systemName
 	});
 
 	let minusText = diceTrySettings.imageForDfMinus;
-	let blankText = diceTrySettings.imageForDfBlank;
 	let plusText = diceTrySettings.imageForDfPlus;
 
-	console.log(minusText, blankText, plusText);
+	console.log(minusText, plusText);
 
 	dice3d.addDicePreset({
 		type:"df",
 		labels:[
 			minusText,
-			blankText,
+			"",
 			plusText
 		],
-	system:"UserDefined"
+	system:systemName
+	});
+
+	let heads = diceTrySettings.imageForDcH;
+	let tails = diceTrySettings.imageForDcT;
+
+	dice3d.addDicePreset({
+		type:"dc",
+		labels:[
+			tails,
+			heads
+		],
+	system:systemName
+	});
+
+	let imageForD21 = diceTrySettings.imageForD21;
+	let imageForD22 = diceTrySettings.imageForD22;
+
+	dice3d.addDicePreset({
+		type:"d2",
+		labels:[
+			imageForD21,
+			imageForD22
+		],
+	system:systemName
+	});
+
+	let imageForD41 = diceTrySettings.imageForD41;
+	let imageForD44 = diceTrySettings.imageForD44;
+
+	dice3d.addDicePreset({
+		type:"d4",
+		labels:[
+			imageForD41,
+			'2','3',
+			imageForD44
+		],
+	system:systemName
+	});
+
+	let imageForD61 = diceTrySettings.imageForD61;
+	let imageForD66 = diceTrySettings.imageForD66;
+
+	dice3d.addDicePreset({
+		type:"d6",
+		labels:[
+			imageForD61,
+			'2','3','4','5',
+			imageForD66
+		],
+	system:systemName
+	});
+
+	let imageForD81 = diceTrySettings.imageForD81;
+	let imageForD88 = diceTrySettings.imageForD88;
+
+	dice3d.addDicePreset({
+		type:"d8",
+		labels:[
+			imageForD81,
+			'2','3','4','5','6','7',
+			imageForD88
+		],
+	system:systemName
+	});
+
+	let imageForD1001 = diceTrySettings.imageForD1001;
+	let imageForD1000 = diceTrySettings.imageForD1000;
+
+	dice3d.addDicePreset({
+		type:"d10",
+		labels:[
+			imageForD1001,
+			'2','3','4','5','6','7','8','9',
+			imageForD1000
+		],
+	system:systemName
+	});
+
+
+		let imageForD10000 = diceTrySettings.imageForD10000;
+		let imageForD10010 = diceTrySettings.imageForD10010;
+
+		dice3d.addDicePreset({
+			type:"d100",
+			labels:[
+				imageForD10010,
+				'20','30','40','50','60','70','80','90',
+				imageForD10000
+			],
+		system:systemName
+		});
+
+	let imageForD1201 = diceTrySettings.imageForD1201;
+	let imageForD1212 = diceTrySettings.imageForD1212;
+
+	dice3d.addDicePreset({
+		type:"d12",
+		labels:[
+			imageForD1201,
+			'2','3','4','5','6','7','8','9','10','11',
+			imageForD1212
+		],
+	system:systemName
+	});
+
+	let imageForD2001 = diceTrySettings.imageForD2010;
+	let imageForD2020 = diceTrySettings.imageForD2020;
+
+	dice3d.addDicePreset({
+		type:"d20",
+		labels:[
+			imageForD2001,
+			'2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19',
+			imageForD2020
+		],
+	system:systemName
 	});
 
 });
